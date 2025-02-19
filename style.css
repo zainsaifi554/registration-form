@@ -9,6 +9,10 @@ body {
 #displayName{
     font-size:border ;
 }
+#displayName{
+    border: 3px solid #e0e0e0;
+    border-radius: 5px;
+}
 .post-div{
     color: rgb(255, 0, 0);
 }
@@ -85,7 +89,7 @@ input[type="text"] {
     border-radius: 5px; 
     margin-bottom: 10px; 
     transition: transform 0.2s; 
-    color: rgb(255, 0, 0);
+    color: rgb(255, 255, 255);
     border: 1px solid white;
 }
 

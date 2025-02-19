@@ -21,6 +21,7 @@ onAuthStateChanged(auth,  (user) => {
       window.location="../../index.html"
     } else {
       console.log('User is not signed in')
+      // window.location="./signup.html"
     }
   });
   
@@ -68,7 +69,7 @@ onAuthStateChanged(auth,  (user) => {
       
      
   console.log("Document written with ID: ", docRef.id);
-    // window.location="../../index.html"
+    window.location="../../index.html"
   })
   .catch((error) => {
    

@@ -10,7 +10,7 @@ background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(18,18,18,1) 44%, rgba(
 }
 
 
-h1 {
+.myposts {
     text-align: center;
     color: #000000; 
     margin-bottom: 20px;
@@ -28,18 +28,25 @@ h1 {
     display: flex;
     align-items: center;
     
-    justify-content: center;
+    justify-content: space-around;
     right: 0;
     height: 50px;
     margin: 0;
     padding: 0;
+    font-size: 35px;
 }
 .line{
     background: #ffffff;
     height: 1px;
     width: 100%;
 }
-
+#name{
+    border: 3px solid #ffffff;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+    background: black;
+}
 button {
     background-color: #ffffff; 
     color: rgb(0, 0, 0);
@@ -138,11 +145,11 @@ button:hover {
 #myPosts {
     border: 1px solid #000000;
     margin-top: 10px;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     display: block;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+    box-shadow: 0 2px 10px rgb(255, 255, 255); 
    
    
 }
@@ -159,15 +166,36 @@ button:hover {
     overflow-wrap: break-word;
     background: #d5d5d7b9;
 }
-#postText >span {
-    font-weight: bold; 
+.postNameTextDiv{
+    display: flex;
+    flex-direction: column;
+    color: #000;
+    font-size: 20px;
+    border: 3px solid black;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgb(0, 0, 0);
+
+}
+.PostTextH1{
+    background: #ffffff;
+    border: 2px solid black;
+   border-radius: 5px;
+   padding: 10px ;
+
+}
+span {
+    
+    /* font-weight: bold; 
     color: #333; 
     font-size: 14px; 
     display: block; 
     margin-top: 5px;
     border: 2px solid black;
     padding: 10px;
-    border-radius: 10px;
+    border-radius: 10px; */
+    padding: 10px;
+    text-decoration: underline;
 }
 
 .edit_div {

@@ -14,9 +14,12 @@ import {
 import { db } from "../firebase.js";
 
 let userID = localStorage.getItem("userID");
+let postName = localStorage.getItem("displayName");
+
 let myPostDiv = document.querySelector("#myPosts");
+let userName = document.querySelector("#name");
 
-
+userName.innerHTML = postName+' '+'is logged in'
 
 
 let updatePost = async (post_id, newText) => {
@@ -59,7 +62,10 @@ let getMyPosts = async () => {
             postElement.id = "postText";
          
             postElement.innerHTML = `
-                <span>${post.data().postText}</span><br/>
+            <div class="postNameTextDiv">
+            <span>${"Create post by"+"  " +"("+post.data().displayName +")" }</span>
+                <h1 class="PostTextH1">${post.data().postText}</h1>
+                </div>
                 <div id="edit_div-${post.id}" class="edit_div" style="display: none;">
                     <input type="text" id="edit-${post.id}" value="${post.data().postText}">
                     <button id='complete-${post.id}' class='complete-btn'></button>

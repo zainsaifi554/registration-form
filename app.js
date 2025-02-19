@@ -15,7 +15,7 @@ import { auth,db } from "./firebase.js";
 
 
 let User = localStorage.getItem("userID");
-let displayName = localStorage.getItem("displayName")
+let postName = localStorage.getItem("displayName")
 if (!User) {
   console.log("no");
   window.location.replace("./form/signup/signUp.html")
@@ -31,12 +31,14 @@ let addPostBtn = document.getElementById('add-post');
 let allPostDiv = document.getElementById('allPosts');
 let name = document.getElementById('displayName');
 
- let fullName = name.innerHTML = displayName
+ let fullName = name.innerHTML = postName+' '+'is logged in'
+ name.style.backgroundColor = "black";
+ name.style.padding = "10px";
 // console.log(fullName);
 
 // let localuser = localStorage.getItem("displayName");
 
-console.log('local.', displayName);
+console.log('local.', fullName);
  
 let createPost = async (text) => {
   try {
@@ -44,7 +46,7 @@ let createPost = async (text) => {
     const docRef = await addDoc(collection(db, "posts"), {
       postText: text,
       uid: userID,
-      displayName: displayName
+      displayName: postName
     });
     console.log("Document written with ID: ", docRef.id);
     console.log("Post Added");
@@ -67,7 +69,7 @@ let getAllPosts = async (post) => {
       // console.log(post.data());
       // console.log(theAllPosts);
       
-      allPostDiv.innerHTML += `<div class="post-div"><h1 width:300px;>${post.data().postText} <h1></h1> </h1>
+      allPostDiv.innerHTML += `<div class="post-div"><span>${"Create post by"+"  " +"("+post.data().displayName +")" }</span><br><br><h1 width:300px;>${post.data().postText}  </h1>
       </div>`;
       
     });
@@ -124,5 +126,6 @@ let logout = ()=>{
   
   
   let logoutbtn = document.getElementById('logout');
+  logoutbtn.innerHTML ='logout'+' '+ postName
  logoutbtn.addEventListener('click', logout)
 
