@@ -4,11 +4,11 @@ import { collection, addDoc, getDoc, updateDoc, setDoc,doc } from 'https://www.g
 import { auth,db, provider,signInWithPopup,GoogleAuthProvider} from '../../firebase.js'
 
 let User = localStorage.getItem("userID");
-// if (User) {
-//   console.log("no");
-//   window.location.replace("../../index.html")
+if (User) {
+  console.log("no");
+  window.location.replace("../../index.html")
   
-// }
+}
 
 onAuthStateChanged(auth,  (user) => {
     if (user) {
