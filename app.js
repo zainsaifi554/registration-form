@@ -4,10 +4,7 @@ import {
   addDoc,
   collection,
   getDocs,
-  query,
-  where,
-  updateDoc,
-  doc,
+
   
 } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-firestore.js";
 
@@ -34,9 +31,7 @@ let name = document.getElementById('displayName');
  let fullName = name.innerHTML = postName+' '+'is logged in'
  name.style.backgroundColor = "black";
  name.style.padding = "10px";
-// console.log(fullName);
 
-// let localuser = localStorage.getItem("displayName");
 
 console.log('local.', fullName);
  
@@ -65,9 +60,7 @@ let getAllPosts = async (post) => {
     
     const posts = await getDocs(collection(db, "posts"));
     posts.forEach((post) => {
-      // let theAllPosts = document.createElement("div");
-      // console.log(post.data());
-      // console.log(theAllPosts);
+    
       
       allPostDiv.innerHTML += `<div class="post-div"><span>${"Create post by"+"  " +"("+post.data().displayName +")" }</span><br><br><h1 width:300px;>${post.data().postText}  </h1>
       </div>`;

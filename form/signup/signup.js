@@ -15,17 +15,26 @@ onAuthStateChanged(auth,  (user) => {
       
       const uid = user.uid;
       let userdata = localStorage.setItem("userID", uid);
-      // localStorage.setItem("displayName", (user.displayName))
       
       console.log('User is signed in.', uid);
       window.location="../../index.html"
     } else {
       console.log('User is not signed in')
-      // window.location="./signup.html"
     }
   });
   
-  
+  var toggleCheckbox = document.getElementById('exampleCheck1');
+var passwordInput = document.getElementById("password");
+
+toggleCheckbox.addEventListener('change', function () {
+    if (toggleCheckbox.checked) {
+        passwordInput.type = 'text';
+       
+    } else {
+        passwordInput.type = 'password';
+        
+    }
+});
   
   
   let signUp = async()=>{
@@ -33,8 +42,7 @@ onAuthStateChanged(auth,  (user) => {
     let password = document.getElementById("password").value
     let userName = document.getElementById("name").value
     let phone = document.getElementById("phone").value
-    
-    
+  
     
     createUserWithEmailAndPassword(auth, email, password)
     .then(async(userCredential) => {
@@ -79,16 +87,6 @@ onAuthStateChanged(auth,  (user) => {
   });
 
 }
-// await setDoc(doc(db, `users`, uid), {
-//   displayName: userName,
-//   email: email,
-//   userID : uid,
-// });
-
-// await updateDoc(docRef, {
-//   "displayName":userName,
- 
-// });
 
 
 

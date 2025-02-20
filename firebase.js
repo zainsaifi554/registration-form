@@ -5,11 +5,7 @@
 
   import { getAuth,signInWithPopup, GoogleAuthProvider } from 'https://www.gstatic.com/firebasejs/11.2.0/firebase-auth.js'
   import { getFirestore } from 'https://www.gstatic.com/firebasejs/11.2.0/firebase-firestore.js'
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
-
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  
   const firebaseConfig = {
     apiKey: "AIzaSyD185O4GFVsKZJcO2CDxZUgt49qHY-TTPY",
     authDomain: "register-user-55ec0.firebaseapp.com",
@@ -28,6 +24,7 @@ const auth = getAuth(app);
 
 // Initialize Cloud Firestore and get a reference to the service
 const db = getFirestore(app)
+
 
 
 const provider = new GoogleAuthProvider();
