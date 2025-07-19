@@ -63,7 +63,7 @@ const signIn = () => {
     
     
     const forgetPassword = () => {
-        window.location = "../../index.html";
+        // window.location = "../../index.html";
         sendPasswordResetEmail(auth, email.value)
         .then(() => {
             console.log("email sent")
